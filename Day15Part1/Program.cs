@@ -1,0 +1,1 @@
+﻿Console.WriteLine(new List<string>(){File.ReadAllLines("input.txt").Aggregate("", (previous, current) => previous+current)}.Select(j => j.Split(",").Select(s => s.Aggregate<char,long>(0, (previous, current) => (previous + current)*17)%256)).First().Sum());
